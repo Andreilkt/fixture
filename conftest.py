@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
 
+
 @pytest.test.fixture()
 def driver():
     driver = webdriver.Chrome()  # это будет выполняться до теста
