@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-@pytest.test.fixture()
+@pytest.fixture()
 def driver():
     driver = webdriver.Chrome()  # это будет выполняться до теста
     driver.get("https://comments-school-1.testkontur.ru/comments/preview/1/default/test")

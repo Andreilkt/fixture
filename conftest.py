@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 
 
-@pytest.test.fixture()
+@pytest.fixture()
 def driver():
     driver = webdriver.Chrome()  # это будет выполняться до теста
     driver.get("https://comments-school-1.testkontur.ru/comments/preview/1/default/test")
