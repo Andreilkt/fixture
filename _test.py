@@ -9,7 +9,7 @@ from conftest import driver
 
 def test_searchTesting(driver):
     search_fields = driver.find_element(By.NAME, "q")
-    search_fields.send_keys("Тестирование")
+    search_fields.send_keys("комментарии")
     search_fields.send_keys(Keys.ENTER)
 
     header = driver.find_element(By.TAG_NAME, "h3")
