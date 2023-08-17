@@ -8,21 +8,22 @@ from selenium.webdriver.common.keys import Keys
 from conftest import driver
 
 def test_searchTesting(driver):
-    search_fields = driver.find_element(By.NAME, "q")
-    search_fields.send_keys("комментарии")
-    search_fields.send_keys(Keys.ENTER)
+    search_ = driver.find_element(By.CLASS_NAME, "data-c71-header")
+    assert search_.text == 'Превью комментариев'
 
-    header = driver.find_element(By.TAG_NAME, "h3")
-    assert header.text == 'Превью комментариев'
 
-   # sleep(10)
-    #driver.close()
 
 def test_comment(driver):
-    search_fields = driver.find_element(By.NAME, "q")
-    search_fields.send_keys("Комментарии")
-    search_fields.send_keys(Keys.ENTER)
+    search_fields = driver.find_element(By.CLASS_NAME, "c71-author__name")
+    assert search_fields.text == 'Александр Пушкин'
 
-    header = driver.find_element(By.TAG_NAME, "h3")
-    assert header.text == 'Превью комментариев'
+    print(search_fields.text)
+    #search_fields.send_keys("Комментарии")
+    #search_fields.send_keys(Keys.ENTER)
+
+    text_ = driver.find_element(By.CLASS_NAME, "c71-author__text")
+    assert text_.text == 'Тест!'
+
+    print(text_.text)
+
 
